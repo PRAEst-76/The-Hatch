@@ -1,0 +1,15 @@
+{
+    "ModTitle": "The Hatch",
+    "ModVersion": "0.1.2",
+    "ModAuthor": "PRAEst76",
+    "ContactInfo": "Discord: praest76#8883",
+    "DFUnity_Version": "0.14.4",
+    "ModDescription": "A simple mod to add a placeable hatch to traverse to another room or floor level.",
+    "GUID": "7f150753-ed0f-43ba-9cd7-36d2d5a7d482",
+    "Files": [
+        "Assets/Game/Mods/The-Hatch/Models/41410/TEXTURE.000_44.png",
+        "Assets/Game/Mods/The-Hatch/Models/41410/TEXTURE.094_1.png",
+        "Assets/Game/Mods/The-Hatch/Models/41410/41410.blend",
+        "Assets/Game/Mods/The-Hatch/Scripts/TheHatchLoader.cs"
+    ]
+}

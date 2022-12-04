@@ -27,8 +27,9 @@ namespace LocationLoader
 
         static void OnHatchActivated(RaycastHit hit)
         {
-            Transform hatchTransform = hit.transform;
-            Transform prefabTransform = hatchTransform.parent;
+ 
+            Transform ladderTransform = hit.transform;
+            Transform prefabTransform = ladderTransform.parent;
             GameObject prefabObject = prefabTransform.gameObject;
             LocationData data = prefabObject.GetComponent<LocationData>();
 
@@ -36,12 +37,12 @@ namespace LocationLoader
             bool foundBottom = data.FindClosestMarker(EditorMarkerTypes.LadderBottom, playerMotor.transform.position, out Vector3 bottomMarker);
             bool foundTop = data.FindClosestMarker(EditorMarkerTypes.LadderTop, playerMotor.transform.position, out Vector3 topMarker);
 
-            Vector2 hatchPlanarPos = new Vector2(hatchTransform.position.x, hatchTransform.position.z);
+            Vector2 ladderPlanarPos = new Vector2(ladderTransform.position.x, ladderTransform.position.z);
             Vector2 bottomMarkerPlanarPos = new Vector2(bottomMarker.x, bottomMarker.z);
             Vector2 topMarkerPlanarPos = new Vector2(topMarker.x, topMarker.z);
 
-            float bottomPlanarDistance = Vector2.Distance(hatchPlanarPos, bottomMarkerPlanarPos);
-            float topPlanarDistance = Vector2.Distance(hatchPlanarPos, topMarkerPlanarPos);
+            float bottomPlanarDistance = Vector2.Distance(ladderPlanarPos, bottomMarkerPlanarPos);
+            float topPlanarDistance = Vector2.Distance(ladderPlanarPos, topMarkerPlanarPos);
 
             const float MaxMarkerDistance = PlayerActivate.DefaultActivationDistance * 2;
             foundBottom = foundBottom && bottomPlanarDistance < MaxMarkerDistance;
