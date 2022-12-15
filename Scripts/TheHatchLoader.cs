@@ -28,7 +28,7 @@ namespace DaggerfallWorkshop.Game
 
         private static void OnHatchActivated(RaycastHit hit)
         {
-            DaggerfallLadder ladder = hit.transform.GetComponent<DaggerfallLadder>();
+            DaggerfallLadder hatch = hit.transform.GetComponent<DaggerfallLadder>();
                 if (hit.distance > DefaultActivationDistance)
                 {
                     DaggerfallUI.SetMidScreenText(TextManager.Instance.GetLocalizedText("youAreTooFarAway"));
@@ -36,7 +36,7 @@ namespace DaggerfallWorkshop.Game
                 }
                 else
                 {
-                    ladder.ClimbLadder();
+                    hatch.ClimbLadder();
                 }
         }
     }
